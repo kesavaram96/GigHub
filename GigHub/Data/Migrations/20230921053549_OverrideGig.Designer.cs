@@ -4,6 +4,7 @@ using GigHub.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GigHub.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230921053549_OverrideGig")]
+    partial class OverrideGig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,28 +37,6 @@ namespace GigHub.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = (byte)1,
-                            Name = "Jazz"
-                        },
-                        new
-                        {
-                            Id = (byte)2,
-                            Name = "Blues"
-                        },
-                        new
-                        {
-                            Id = (byte)3,
-                            Name = "Rock"
-                        },
-                        new
-                        {
-                            Id = (byte)4,
-                            Name = "Country"
-                        });
                 });
 
             modelBuilder.Entity("GigHub.Models.Gig", b =>
