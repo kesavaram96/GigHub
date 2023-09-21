@@ -33,7 +33,7 @@ namespace GigHub.Controllers
             var gig = new Gig
             {
                 Artist = artist,
-                DateTime = DateTime.Parse(string.Format("{0} {1}", model.Date, model.Time)),
+                DateTime = model.DateTime,
                 Genre = genre,
                 Venue = model.Venue,
             };

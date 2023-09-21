@@ -8,7 +8,12 @@ namespace GigHub.ViewModels
         public string Date { get; set; }
         public string Time { get; set; }
         public int Genre { get; set; }
+        public DateTime DateTime { 
+            get {
+                return DateTime.Parse(String.Format("{0} {1}", Date, Time));
+            } 
+        }
 
-        
+
     }
 }
