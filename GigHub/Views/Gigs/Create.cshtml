@@ -7,20 +7,24 @@
     <div class="mb-3 form-group">
         <label asp-for="Venue" class="form-label"></label>
         <input asp-for="Venue" class="form-control" >
+            <span asp-validation-for="Venue" class="text-danger"></span>
     </div>
 
 
     <div class="mb-3 form-group">
         <label asp-for="Date" class="form-label"></label>
         <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
     </div>
     <div class="mb-3 form-group">
         <label asp-for="Time" class="form-label"></label>
         <input asp-for="Time" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
     </div>
         <div class="mb-3 form-group">
             <label asp-for="Genre" class="form-label"></label>
             <select asp-for="Genre" asp-items="@ViewBag.Genres" class="form-select"></select>
+            <span asp-validation-for="Genre" class="text-danger"></span>
         </div>
    
     <button type="submit" class="btn btn-primary">Submit</button>
