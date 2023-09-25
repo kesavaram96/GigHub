@@ -4,6 +4,7 @@
 <h2>Add a Gig</h2>
 
 <form asp-action="Create" asp-controller="Gigs">
+    @Html.AntiForgeryToken()
     <div class="mb-3 form-group">
         <label asp-for="Venue" class="form-label"></label>
         <input asp-for="Venue" class="form-control" >
@@ -30,3 +31,10 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+
+@section scripts
+    {
+   
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+  
+}

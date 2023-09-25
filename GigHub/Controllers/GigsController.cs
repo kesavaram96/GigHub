@@ -20,18 +20,20 @@ namespace GigHub.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            
             IEnumerable<Genre> genres=_context.Genres;
             ViewBag.Genres = new SelectList(genres, "Id", "Name");
             return View();
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(GigFormViewModel model) 
         {
             if (!ModelState.IsValid) 
             {
                 //model.Genre = _context.Genres.ToList();
-                return View("Create");
+                return View(model);
             }
             
         
@@ -42,6 +44,7 @@ namespace GigHub.Controllers
                 GenreId = model.Genre,
                 Venue = model.Venue,
             };
+
             _context.Add(gig);
             _context.SaveChanges(); 
             return RedirectToAction("Index","Home");

@@ -9,9 +9,11 @@ namespace GigHub.ViewModels
         public string Venue { get; set; }
 
         [Required]
+        
         public string Date { get; set; }
 
         [Required]
+        
         public string Time { get; set; }
 
         [Required]
